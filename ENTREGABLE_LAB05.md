@@ -2,17 +2,17 @@
 
 **Curso:** Desarrollo de Aplicaciones Empresariales
 **Institución:** TECSUP
-**Docente:** [NOMBRE DEL DOCENTE]
-**Alumno:** [TU NOMBRE COMPLETO]
-**Semana:** [SEMANA ACADÉMICA]
-**Fecha:** [FECHA DE ENTREGA]
+**Docente:** Michael Montgomery Rosell
+**Alumno:** Alexis Prieto Huiza
+**Semana:** Semana 05
+**Fecha:** 25/09/26
 
 ---
 
 ## Nota sobre la modalidad
 
-> Este laboratorio fue desarrollado de forma **INDIVIDUAL** por **[TU NOMBRE
-> COMPLETO]**, sin reparto de roles entre integrantes. Todas las decisiones
+> Este laboratorio fue desarrollado de forma **INDIVIDUAL** por **Alexis Prieto
+> Huiza**, sin reparto de roles entre integrantes. Todas las decisiones
 > técnicas, la implementación del código, las pruebas y las capturas
 > corresponden a un único estudiante.
 

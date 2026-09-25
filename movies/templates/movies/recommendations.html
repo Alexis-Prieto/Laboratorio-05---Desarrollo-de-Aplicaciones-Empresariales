@@ -1,59 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Recomendaciones: {{ genre.name }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recomendaciones - {{ genre.name }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; margin: 2rem auto; max-width: 60rem; color: #1f2933; }
-    h1 { border-bottom: 2px solid #4a90d9; padding-bottom: .5rem; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    th, td { border: 1px solid #d3d8de; padding: .5rem .75rem; text-align: left; }
-    th { background: #f0f4f8; }
-    .score { font-weight: bold; color: #b7791f; }
-    .empty { color: #6b7280; font-style: italic; margin-top: 1rem; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+      color: #1f2937;
+      min-height: 100vh;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+    .header {
+      background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+      border-radius: 20px;
+      padding: 40px;
+      color: white;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+    }
+    .header h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 10px; letter-spacing: -0.02em; }
+    .header p { opacity: 0.9; font-size: 1.1rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    }
+    .card-poster-img {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      display: block;
+    }
+    .card-poster-placeholder {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #818cf8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .card-rating {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      color: #f59e0b;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 20px;
+      z-index: 2;
+    }
+    .card-body { padding: 20px; }
+    .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; color: #1f2937; line-height: 1.3; }
+    .card-year { color: #6b7280; font-size: 0.9rem; margin-bottom: 12px; font-weight: 500; }
+    .badges { display: flex; gap: 6px; flex-wrap: wrap; }
+    .badge { background: #eef2ff; color: #4f46e5; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+    .empty { grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #6b7280; font-size: 1.1rem; }
+    @media (max-width: 640px) {
+      .header h1 { font-size: 1.8rem; }
+      .header { padding: 30px 20px; }
+      .grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <h1>Pel&iacute;culas recomendadas de {{ genre.name }}</h1>
-
-  {% if genre.description %}
-    <p>{{ genre.description }}</p>
-  {% endif %}
-
-  {% if movies %}
-    <table>
-      <thead>
-        <tr>
-          <th>T&iacute;tulo</th>
-          <th>Estreno</th>
-          <th>G&eacute;neros</th>
-          <th>Valoraci&oacute;n media</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for movie in movies %}
-          <tr>
-            <td>{{ movie.title }}</td>
-            <td>{{ movie.release_date|date:"d/m/Y" }}</td>
-            <td>
-              {% for genre_item in movie.genres.all %}
-                {{ genre_item.name }}{% if not forloop.last %}, {% endif %}
-              {% endfor %}
-            </td>
-            <td class="score">
-              {% if movie.average_score %}
-                {{ movie.average_score|floatformat:2 }} / 5
-              {% else %}
-                Sin valorar
-              {% endif %}
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  {% else %}
-    <p class="empty">No hay pel&iacute;culas registradas para este g&eacute;nero.</p>
-  {% endif %}
+  <div class="container">
+    <div class="header">
+      <h1>{{ genre.name }}</h1>
+      <p>{{ genre.description }}</p>
+    </div>
+    <div class="grid">
+      {% for movie in movies %}
+      <div class="card">
+        {% if movie.poster %}
+          <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" class="card-poster-img">
+        {% else %}
+          <div class="card-poster-placeholder">
+            <span>{{ movie.title }}</span>
+          </div>
+        {% endif %}
+        <div class="card-rating">{{ movie.average_rating|floatformat:1 }} ★</div>
+        <div class="card-body">
+          <h3 class="card-title">{{ movie.title }}</h3>
+          <div class="card-year">{{ movie.release_date|date:"Y" }}</div>
+          <div class="badges">
+            {% for g in movie.genres.all %}
+            <span class="badge">{{ g.name }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <div class="empty">No hay películas recomendadas para este género.</div>
+      {% endfor %}
+    </div>
+  </div>
 </body>
 </html>
