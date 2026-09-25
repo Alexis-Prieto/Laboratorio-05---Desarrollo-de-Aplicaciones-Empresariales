@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recomendaciones: {{ genre.name }}</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; margin: 2rem auto; max-width: 60rem; color: #1f2933; }
+    h1 { border-bottom: 2px solid #4a90d9; padding-bottom: .5rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid #d3d8de; padding: .5rem .75rem; text-align: left; }
+    th { background: #f0f4f8; }
+    .score { font-weight: bold; color: #b7791f; }
+    .empty { color: #6b7280; font-style: italic; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Pel&iacute;culas recomendadas de {{ genre.name }}</h1>
+
+  {% if genre.description %}
+    <p>{{ genre.description }}</p>
+  {% endif %}
+
+  {% if movies %}
+    <table>
+      <thead>
+        <tr>
+          <th>T&iacute;tulo</th>
+          <th>Estreno</th>
+          <th>G&eacute;neros</th>
+          <th>Valoraci&oacute;n media</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for movie in movies %}
+          <tr>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.release_date|date:"d/m/Y" }}</td>
+            <td>
+              {% for genre_item in movie.genres.all %}
+                {{ genre_item.name }}{% if not forloop.last %}, {% endif %}
+              {% endfor %}
+            </td>
+            <td class="score">
+              {% if movie.average_score %}
+                {{ movie.average_score|floatformat:2 }} / 5
+              {% else %}
+                Sin valorar
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="empty">No hay pel&iacute;culas registradas para este g&eacute;nero.</p>
+  {% endif %}
+</body>
+</html>

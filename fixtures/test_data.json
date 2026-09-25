@@ -1,0 +1,430 @@
+[
+{
+  "model": "movies.genre",
+  "pk": 1,
+  "fields": {
+    "name": "Action",
+    "description": "Films focused on fast pacing, physical action and conflict."
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 2,
+  "fields": {
+    "name": "Drama",
+    "description": "Stories centred on characters, conflict and emotion."
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 3,
+  "fields": {
+    "name": "Comedy",
+    "description": "Humorous stories intended to make the audience laugh."
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 4,
+  "fields": {
+    "name": "Science Fiction",
+    "description": "Speculative stories based on science and technology."
+  }
+},
+{
+  "model": "movies.person",
+  "pk": 1,
+  "fields": {
+    "first_name": "Keanu",
+    "last_name": "Reeves",
+    "birth_date": "1964-09-02",
+    "photo": ""
+  }
+},
+{
+  "model": "movies.person",
+  "pk": 2,
+  "fields": {
+    "first_name": "Laurence",
+    "last_name": "Fishburne",
+    "birth_date": "1961-07-30",
+    "photo": ""
+  }
+},
+{
+  "model": "movies.person",
+  "pk": 3,
+  "fields": {
+    "first_name": "Carrie-Anne",
+    "last_name": "Moss",
+    "birth_date": "1967-12-27",
+    "photo": ""
+  }
+},
+{
+  "model": "movies.person",
+  "pk": 4,
+  "fields": {
+    "first_name": "Sigourney",
+    "last_name": "Weaver",
+    "birth_date": "1949-10-08",
+    "photo": ""
+  }
+},
+{
+  "model": "movies.person",
+  "pk": 5,
+  "fields": {
+    "first_name": "Bill",
+    "last_name": "Murray",
+    "birth_date": "1950-09-21",
+    "photo": ""
+  }
+},
+{
+  "model": "movies.person",
+  "pk": 6,
+  "fields": {
+    "first_name": "Hugo",
+    "last_name": "Weaver",
+    "birth_date": "1960-12-18",
+    "photo": ""
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 1,
+  "fields": {
+    "title": "The Matrix",
+    "synopsis": "A hacker discovers that reality is a simulation built to control humanity, and joins a rebellion against the machines.",
+    "release_date": "1999-03-30",
+    "poster": "",
+    "created_at": "2026-09-25T19:12:31.752Z",
+    "updated_at": "2026-09-25T19:12:31.752Z",
+    "genres": [
+      1,
+      4
+    ],
+    "cast": [
+      2,
+      3,
+      1
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 2,
+  "fields": {
+    "title": "Terminator 2: Judgment Day",
+    "synopsis": "A reprogrammed terminator is sent back in time to protect a boy and prevent the creation of Skynet.",
+    "release_date": "1991-07-03",
+    "poster": "",
+    "created_at": "2026-09-25T19:12:31.757Z",
+    "updated_at": "2026-09-25T19:12:31.757Z",
+    "genres": [
+      1,
+      4
+    ],
+    "cast": [
+      6,
+      4
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 3,
+  "fields": {
+    "title": "Alien",
+    "synopsis": "The crew of a commercial spacecraft encounters a deadly alien organism aboard their ship.",
+    "release_date": "1979-05-25",
+    "poster": "",
+    "created_at": "2026-09-25T19:12:31.759Z",
+    "updated_at": "2026-09-25T19:12:31.759Z",
+    "genres": [
+      2,
+      4
+    ],
+    "cast": [
+      4
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 4,
+  "fields": {
+    "title": "Ghostbusters",
+    "synopsis": "A team of scientists starts a ghost busting business in New York City and investigates a haunted hotel.",
+    "release_date": "1984-06-08",
+    "poster": "",
+    "created_at": "2026-09-25T19:12:31.761Z",
+    "updated_at": "2026-09-25T19:12:31.761Z",
+    "genres": [
+      3,
+      4
+    ],
+    "cast": [
+      5,
+      4
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 5,
+  "fields": {
+    "title": "Groundhog Day",
+    "synopsis": "A cynical television reporter keeps living the same day over and over until he changes himself.",
+    "release_date": "1993-02-12",
+    "poster": "",
+    "created_at": "2026-09-25T19:12:31.763Z",
+    "updated_at": "2026-09-25T19:12:31.763Z",
+    "genres": [
+      3,
+      2
+    ],
+    "cast": [
+      5
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 6,
+  "fields": {
+    "title": "Point Break",
+    "synopsis": "A young FBI agent infiltrates the world of surfers and bank robbers in California.",
+    "release_date": "1991-05-12",
+    "poster": "",
+    "created_at": "2026-09-25T19:12:31.765Z",
+    "updated_at": "2026-09-25T19:12:31.765Z",
+    "genres": [
+      1,
+      2
+    ],
+    "cast": [
+      1
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 7,
+  "fields": {
+    "title": "The Matrix Reloaded",
+    "synopsis": "Neo and the rebel leaders continue the fight against the machines while the Oracle reveals more about the real world.",
+    "release_date": "2003-05-15",
+    "poster": "",
+    "created_at": "2026-09-25T19:12:31.767Z",
+    "updated_at": "2026-09-25T19:12:31.767Z",
+    "genres": [
+      1,
+      4
+    ],
+    "cast": [
+      2,
+      3,
+      1
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 8,
+  "fields": {
+    "title": "Aliens",
+    "synopsis": "Ellen Ripley returns to the planet with a squad of marines to find out why the colony has stopped answering calls.",
+    "release_date": "1986-07-18",
+    "poster": "",
+    "created_at": "2026-09-25T19:12:31.769Z",
+    "updated_at": "2026-09-25T19:12:31.769Z",
+    "genres": [
+      1,
+      4
+    ],
+    "cast": [
+      4
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 9,
+  "fields": {
+    "title": "Scrooged",
+    "synopsis": "A cynical television executive is visited by three ghosts on Christmas Eve to show him the value of his life.",
+    "release_date": "1988-11-23",
+    "poster": "",
+    "created_at": "2026-09-25T19:12:31.771Z",
+    "updated_at": "2026-09-25T19:12:31.771Z",
+    "genres": [
+      3,
+      2
+    ],
+    "cast": [
+      5
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 10,
+  "fields": {
+    "title": "John Wick",
+    "synopsis": "A retired hitman takes revenge on the criminals who killed his dog and stole his car.",
+    "release_date": "2014-10-24",
+    "poster": "",
+    "created_at": "2026-09-25T19:12:31.773Z",
+    "updated_at": "2026-09-25T19:12:31.773Z",
+    "genres": [
+      1,
+      2
+    ],
+    "cast": [
+      1
+    ]
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 1,
+  "fields": {
+    "movie": 1,
+    "score": 5,
+    "comment": "A defining science fiction classic.",
+    "created_at": "2026-09-25T19:12:31.756Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 2,
+  "fields": {
+    "movie": 1,
+    "score": 5,
+    "comment": "Excellent world building.",
+    "created_at": "2026-09-25T19:12:31.756Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 3,
+  "fields": {
+    "movie": 2,
+    "score": 4,
+    "comment": "Great action sequences.",
+    "created_at": "2026-09-25T19:12:31.758Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 4,
+  "fields": {
+    "movie": 3,
+    "score": 5,
+    "comment": "Tension from the first minute.",
+    "created_at": "2026-09-25T19:12:31.760Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 5,
+  "fields": {
+    "movie": 3,
+    "score": 4,
+    "comment": "A masterpiece of horror.",
+    "created_at": "2026-09-25T19:12:31.760Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 6,
+  "fields": {
+    "movie": 4,
+    "score": 4,
+    "comment": "Funny and full of character.",
+    "created_at": "2026-09-25T19:12:31.762Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 7,
+  "fields": {
+    "movie": 5,
+    "score": 5,
+    "comment": "A perfect comedy with depth.",
+    "created_at": "2026-09-25T19:12:31.764Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 8,
+  "fields": {
+    "movie": 5,
+    "score": 5,
+    "comment": "Loved it.",
+    "created_at": "2026-09-25T19:12:31.765Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 9,
+  "fields": {
+    "movie": 5,
+    "score": 4,
+    "comment": "Very funny.",
+    "created_at": "2026-09-25T19:12:31.765Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 10,
+  "fields": {
+    "movie": 6,
+    "score": 4,
+    "comment": "Great soundtrack.",
+    "created_at": "2026-09-25T19:12:31.767Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 11,
+  "fields": {
+    "movie": 7,
+    "score": 3,
+    "comment": "Impressive but long.",
+    "created_at": "2026-09-25T19:12:31.768Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 12,
+  "fields": {
+    "movie": 8,
+    "score": 5,
+    "comment": "The best sequel of its era.",
+    "created_at": "2026-09-25T19:12:31.770Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 13,
+  "fields": {
+    "movie": 8,
+    "score": 4,
+    "comment": "Intense.",
+    "created_at": "2026-09-25T19:12:31.770Z"
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 14,
+  "fields": {
+    "movie": 10,
+    "score": 4,
+    "comment": "Excellent action.",
+    "created_at": "2026-09-25T19:12:31.776Z"
+  }
+}
+]
