@@ -1433,7 +1433,7 @@ intentar borrar) y el ordenamiento de la vista de recomendaciones.
 <img width="1186" height="630" alt="image" src="https://github.com/user-attachments/assets/886974c4-118c-4515-8b53-7ac1206c7218" />
 
 
-## Captura de la estructura del proyecto en el editor
+## Captura de la estructura del proyecto en Visual Studio Code
 
 <img width="702" height="776" alt="image" src="https://github.com/user-attachments/assets/7b831812-f660-453f-acfd-348e1894e4b8" />
 
